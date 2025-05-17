@@ -51,7 +51,7 @@ const CourseContactPopup: React.FC<CourseContactPopupProps> = ({
   return (
     <div className="fixed bottom-5 right-5 z-60 animate-fade-in">
       <div 
-        className="relative bg-white rounded-lg overflow-hidden shadow-2xl"
+        className="relative bg-white rounded-lg shadow-2xl overflow-y-auto overflow-x-hidden"
         style={{ 
           width: 'min(95vw, 500px)',
           maxHeight: '90vh'
