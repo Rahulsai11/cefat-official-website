@@ -57,7 +57,13 @@ const Contact = () => {
           </div>
 
           <div>
-               <iframe width='610px' height='900px' src='https://in.bigin.online/org60041145322/forms/send-us-a-message'></iframe>
+            <Card className="border-none shadow-md overflow-hidden">
+               <iframe 
+                 src='https://in.bigin.online/org60041145322/forms/send-us-a-message'
+                 className="w-full h-[900px] border-0 block" 
+                 title="Contact Form"
+               ></iframe>
+            </Card>
           </div>
         </div>
       </div>
