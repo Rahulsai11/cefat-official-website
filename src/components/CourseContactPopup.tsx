@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input"; // No longer needed
 // import { Label } from "@/components/ui/label"; // No longer needed
@@ -18,16 +17,17 @@ const CourseContactPopup: React.FC<CourseContactPopupProps> = ({
   onClose 
 }) => {
   const [isVisible, setIsVisible] = useState(!!propIsVisible);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   // const [phoneNumber, setPhoneNumber] = useState(""); // No longer needed
 
   useEffect(() => {
     if (propIsVisible !== undefined) {
       setIsVisible(propIsVisible);
     } else {
-      // Show popup after 10 seconds if not controlled externally
+      // Show popup after 2 seconds if not controlled externally
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 10000);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -49,54 +49,43 @@ const CourseContactPopup: React.FC<CourseContactPopupProps> = ({
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 animate-fade-in">
-      <Card className="w-[350px] shadow-lg border-cefat-500 border">
-        <div className="relative">
+    <div className="fixed bottom-5 right-5 z-60 animate-fade-in">
+      <div 
+        className="relative bg-white rounded-lg overflow-hidden shadow-2xl"
+        style={{ 
+          width: 'min(95vw, 500px)',
+          maxHeight: '90vh'
+        }}
+      >
+        <div className="flex items-center justify-between p-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white">
+          <h3 className="text-sm font-medium">
+            Interested in {courseName}?
+          </h3>
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-2 right-2 h-8 w-8 rounded-full"
+            className="h-6 w-6 rounded-full text-white hover:bg-white/20"
             onClick={handleClose}
           >
-            <X className="h-4 w-4" />
+            <X className="h-3.5 w-3.5" />
             <span className="sr-only">Close</span>
           </Button>
-          
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4 text-[#1b83b6]">
-              Interested in {courseName}?
-            </h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Send us a message and we'll get back to you with more information about this course.
-            </p>
-            {/* 
-            <div className="mb-4">
-              <Label htmlFor="phone" className="text-sm font-medium">
-                Mobile Number
-              </Label>
-              <Input 
-                id="phone" 
-                type="tel" 
-                placeholder="Enter your mobile number" 
-                className="mt-1"
-                value={phoneNumber}
-                onChange={handlePhoneChange}
-              />
-            </div>
-            */}
-            <div className="overflow-hidden">
-              <iframe 
-                width='100%' 
-                height='650px' 
-                src='https://in.bigin.online/org60041145322/forms/send-us-a-message'
-                title="Contact Form"
-                className="border-0"
-                scrolling="no"
-              ></iframe>
-            </div>
-          </CardContent>
         </div>
-      </Card>
+        <div className="iframe-wrapper" style={{ width: '100%', overflow: 'hidden' }}>
+          <iframe
+            ref={iframeRef}
+            src="https://in.bigin.online/org60041145322/forms/new"
+            title="Contact Form"
+            className="w-full border-none"
+            style={{ 
+              height: "600px",
+              maxHeight: "80vh",
+              transform: "scale(1)",
+              transformOrigin: "0 0"
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };
