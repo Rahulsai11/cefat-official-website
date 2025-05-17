@@ -71,18 +71,12 @@ const CourseContactPopup: React.FC<CourseContactPopupProps> = ({
             <span className="sr-only">Close</span>
           </Button>
         </div>
-        <div className="iframe-wrapper" style={{ width: '100%', overflow: 'hidden' }}>
+        <div className="iframe-wrapper w-full overflow-hidden">
           <iframe
             ref={iframeRef}
             src="https://in.bigin.online/org60041145322/forms/new"
             title="Contact Form"
-            className="w-full border-none"
-            style={{ 
-              height: "600px",
-              maxHeight: "80vh",
-              transform: "scale(1)",
-              transformOrigin: "0 0"
-            }}
+            className="w-full h-[600px] max-h-[80vh] border-0 block"
           />
         </div>
       </div>
