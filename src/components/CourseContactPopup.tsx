@@ -27,7 +27,7 @@ const CourseContactPopup: React.FC<CourseContactPopupProps> = ({
       // Show popup after 10 seconds if not controlled externally
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 2000);
+      }, 10000);
 
       return () => clearTimeout(timer);
     }
