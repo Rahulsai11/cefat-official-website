@@ -1,60 +1,19 @@
 import React from 'react';
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
-
-const containerStyle = {
-  width: '100%',
-  height: '100%'
-};
-
-// CEFAT coordinates
-const center = {
-  lat: 13.0728345,
-  lng: 77.6026372
-};
 
 const Map = () => {
-  const [infoOpen, setInfoOpen] = React.useState(false);
-
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg' // Replace with your actual API key
-  });
-
-  const onLoad = React.useCallback(
-    () => {
-      setInfoOpen(true);
-    },
-    []
-  );
-
   return (
     <div className="h-[400px] w-full rounded-xl overflow-hidden shadow-lg">
-      {isLoaded ? (
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={15}
-          onLoad={onLoad}
-        >
-          <Marker position={center}>
-            {infoOpen && (
-              <InfoWindow
-                position={center}
-                onCloseClick={() => setInfoOpen(false)}
-              >
-                <div>
-                  <h3 className="font-bold">CEFAT</h3>
-                  <p>14, KV Jairam Rd, above Appam's Bakery & Sweets, Jakkuru</p>
-                </div>
-              </InfoWindow>
-            )}
-          </Marker>
-        </GoogleMap>
-      ) : (
-        <div className="w-full h-full flex items-center justify-center bg-gray-100">
-          <p>Loading Map...</p>
-        </div>
-      )}
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5979952115944!2d77.6001195!3d13.072834499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae193b5c60ae77%3A0xe27c08bf22ec38b3!2sCenter%20of%20Excellence%20For%20Aviation%20Training%20(CEFAT)!5e0!3m2!1sen!2sin!4v1718633578968!5m2!1sen!2sin" 
+        width="100%" 
+        height="100%" 
+        style={{ border: 0 }} 
+        allowFullScreen 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"
+        title="CEFAT Location"
+        className="w-full h-full"
+      ></iframe>
     </div>
   );
 };
