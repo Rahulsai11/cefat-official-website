@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -97,7 +96,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(false)}
         >
           <img 
-            src="https://cefat.in/wp-content/uploads/2020/01/cefat-CURVED-C-BLUE.png" 
+            src="/cefat-logo.png" 
             alt="CEFAT Logo" 
             className="h-12 object-contain"
           />
