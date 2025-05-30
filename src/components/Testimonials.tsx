@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,7 +9,6 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,6 +49,23 @@ const Testimonials = () => {
     };
   }, [api]);
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!api) return;
+
+    const autoplay = () => {
+      if (api.canScrollNext()) {
+        api.scrollNext();
+      } else {
+        api.scrollTo(0);
+      }
+    };
+
+    const interval = setInterval(autoplay, 15000);
+
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <section id="testimonials" className="section-padding bg-gray-50">
       <div className="container mx-auto">
@@ -61,12 +78,6 @@ const Testimonials = () => {
 
         <Carousel 
           className="w-full max-w-5xl mx-auto"
-          plugins={[
-            Autoplay({
-              delay: 15000,
-              stopOnInteraction: false,
-            }),
-          ]}
           setApi={setApi}
         >
           <CarouselContent>

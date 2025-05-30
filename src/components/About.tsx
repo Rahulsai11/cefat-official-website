@@ -1,4 +1,3 @@
-
 import React, { useCallback, useEffect } from "react";
 import { Check, Award, Clock, Plane, Target } from "lucide-react";
 import {
@@ -10,7 +9,6 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -20,8 +18,7 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ onContactClick }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "center" },
-    [Autoplay({ delay: 15000, stopOnInteraction: false })]
+    { loop: true, align: "center" }
   );
 
   const scrollTo = useCallback(
@@ -30,6 +27,23 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
     },
     [emblaApi]
   );
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const autoplay = () => {
+      if (emblaApi.canScrollNext()) {
+        emblaApi.scrollNext();
+      } else {
+        emblaApi.scrollTo(0);
+      }
+    };
+
+    const interval = setInterval(autoplay, 15000);
+
+    return () => clearInterval(interval);
+  }, [emblaApi]);
 
   return (
     <section id="about" className="section-padding bg-white">
@@ -311,17 +325,17 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
 
             <div className="flex justify-center gap-2 mt-6">
               <button 
-                className="w-3 h-3 rounded-full bg-gray-300 hover:bg-cefat-500 transition-colors" 
+                className="w-3 h-3 rounded-full bg-gray-300 hover:bg-cefat-500 transition-colours" 
                 aria-label="Go to slide 1" 
                 onClick={() => scrollTo(0)}
               />
               <button 
-                className="w-3 h-3 rounded-full bg-gray-300 hover:bg-cefat-500 transition-colors" 
+                className="w-3 h-3 rounded-full bg-gray-300 hover:bg-cefat-500 transition-colours" 
                 aria-label="Go to slide 2" 
                 onClick={() => scrollTo(1)}
               />
               <button 
-                className="w-3 h-3 rounded-full bg-gray-300 hover:bg-cefat-500 transition-colors" 
+                className="w-3 h-3 rounded-full bg-gray-300 hover:bg-cefat-500 transition-colours" 
                 aria-label="Go to slide 3" 
                 onClick={() => scrollTo(2)}
               />

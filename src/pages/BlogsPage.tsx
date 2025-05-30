@@ -5,10 +5,18 @@ import { Link } from "react-router-dom";
 // If you add more blogs, update this array and BlogDetailPage content accordingly.
 export const blogs = [
   {
+    id: "srinagar-hail-damage-may-2025",
+    title: "Hail Damage on Srinagar Flight on 21 May 2025",
+    date: "May 2025",
+    desc: "Analysis of an Airbus A-321 aircraft that suffered hail damage near Pathankot on a flight to Srinagar, examining the weather conditions, flight planning decisions, and safety considerations.",
+    keywords: ["aviation safety", "weather deviation", "flight planning", "thunderstorm", "hail damage"],
+    image: "/lovable-uploads/b4da9ceb-5a03-4068-b282-0cfe3a3a980f.png",
+  },
+  {
     id: "cefats-aviation-career",
     title: "Why Choose CEFAT for Your Aviation Training Career?",
     date: "April 2025",
-    desc: "Explore the benefits of professional pilot and aviation courses at CEFAT, Bangalore — from industry expert instructors to job-ready programs.",
+    desc: "Explore the benefits of professional pilot and aviation courses at CEFAT, Bangalore — from industry expert instructors to job-ready programmes.",
     keywords: ["aviation training", "pilot courses", "career in aviation"],
     image: "/lovable-uploads/5aff5b78-e62c-4940-a1cb-40ebfd98a42d.png",
   },
@@ -17,7 +25,7 @@ export const blogs = [
     title: "Commercial Pilot Licensing in India: The CEFAT Advantage",
     date: "March 2025",
     desc: "Learn about CPL and ATPL requirements in India, and how CEFAT guides students through every step of becoming a commercial pilot.",
-    keywords: ["CPL", "ATPL", "commercial pilot training", "CEPAT"],
+    keywords: ["CPL", "ATPL", "commercial pilot training", "CEFAT"],
     image: "/lovable-uploads/b4da9ceb-5a03-4068-b282-0cfe3a3a980f.png",
   },
   {
