@@ -1,0 +1,15 @@
+/* Blog Post Image Styling */
+.blog-post-image {
+  max-height: 300px; /* Adjust this value to the desired height */
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Additional blog content styling */
+.blog-content img {
+  max-height: 300px; /* Apply to all images in blog content */
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+} 

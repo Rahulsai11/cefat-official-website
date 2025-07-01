@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { blogs } from "./BlogsPage";
@@ -28,7 +27,7 @@ const BlogDetailPage = () => {
         Recently an Airbus A-321 aircraft suffered hail damage near Pathankot on a flight to Srinagar for having flown through a thunderstorm cloud (Cumulonimbus or CB). Let us see the facts of the case. The route was 'W30W' DELHI – SRINAGAR VIA, AMRITSAR- PATHANKOT – MESAR SRINAGAR. The route to be flown was in the proximity of the International border (IB) of Pakistan. An aircraft is not to fly within 15 nautical miles (about 28 kilometers) of the Pakistan border unless an Airway passes within the boundary of the said limitation. Due to the recent conflict with Pakistan, their airspace was closed for Indian aircraft and notices had been issued, hence no concessions could have been expected for a deviation to the left of track.
         <br/><br/>
         <div class="my-6">
-          <img src="/lovable-uploads/e27bf63c-2414-4ce3-b093-346d229d432e.png" alt="Flight route map showing Delhi-Srinagar route via Amritsar-Pathankot-Mesar" class="w-full max-w-2xl mx-auto rounded-lg shadow-md"/>
+          <img src="/lovable-uploads/image.png" alt="Flight route map showing Delhi-Srinagar route via Amritsar-Pathankot-Mesar" class="w-full max-w-2xl mx-auto rounded-md shadow-sm"/>
           <p class="text-sm text-gray-600 text-center mt-2 italic">Flight route map showing the Delhi-Srinagar route via Amritsar-Pathankot-Mesar</p>
         </div>
         <br/>
