@@ -1,9 +1,16 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
 // If you add more blogs, update this array and BlogDetailPage content accordingly.
 export const blogs = [
+  {
+    id: "air-india-171-accident",
+    title: "AIR INDIA - 171 ACCIDENT",
+    date: "June 2025",
+    desc: "Captain Gill shares his thoughts as a European Union certified accident investigator on the recent Air India 171 accident that occurred in Ahmedabad on 12th June 2025, emphasizing the importance of accurate analysis based on reliable information.",
+    keywords: ["aircraft accident", "accident investigation", "aviation safety", "Air India", "Boeing 787"],
+    image: "/lovable-uploads/621cc1e2-1110-4ef2-8ad9-8d70a124ddfe.png",
+  },
   {
     id: "srinagar-hail-damage-may-2025",
     title: "Hail Damage on Srinagar Flight on 21 May 2025",

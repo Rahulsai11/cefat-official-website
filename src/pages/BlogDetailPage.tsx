@@ -22,12 +22,43 @@ const BlogDetailPage = () => {
   // Example: Add longer content for each blog using switch/case for demo
   let content = "";
   switch (blog.id) {
+    case "air-india-171-accident":
+      content = `
+        <strong>Captain Gill, you are a European Union certified accident investigator, would you like to share your thoughts on the recent Air India 171 accident that occurred in Ahmedabad on 12th June 2025?</strong>
+        <br/><br/>
+        First of all, I would like to express my deep heartfelt condolences for the families, who lost their loved ones and express my sincere prayers for the departed souls.
+        <br/><br/>
+        To be able to do some accurate analysis, one needs to have authentic information. Let us see what information do we have? We have a video showing the Dreamliner (Boeing 787) take-off and soon thereafter it is seen descending with undercarriage down and crashed. The pilot gave a May Day call stating, "No Lift, No power", that is all. Such a state could result due to very many factors but we have no further reliable information. While I was in the Indian Air Force, I had been a part of very many accident investigations. 
+        <br/><br/>
+        <strong>The Key questions to be answered for any accident are:</strong>
+        <ol class="list-decimal list-inside mt-2 space-y-1">
+          <li>What happened</li>
+          <li>How it happened</li>
+          <li>Why it happened</li>
+        </ol>
+        <br/>
+        All we know is some information on what happened i.e. the aircraft was seen descending soon after take-off in an attitude which is very similar to when an aircraft is in a stalled state, which could have been due to several factors and there is no more evidence other than the May Day call by the pilot.
+        <br/><br/>
+        We have no evidence for 'How and why' of the question. However, since the day of the tragic accident very many experts have appeared on TV channels and participated in endless debates, even discussing factors which were unrelated. For example, some spoke of weather, crosswind, wind-shear, microburst etc, whereas these conditions did not exist. Some have spoken about Flaps, faulty configuration of the aircraft, or the wrong lever selection, when the shape of the landing gear lever and flap lever is very different and their location is well separated. More importantly, an experienced pilot is unlikely to make such a grave error.
+        <br/><br/>
+        Some have attributed the cause of accident to bird hit, when there is no evidence on the video or any mention in the May Day call by the Pilot.
+        <br/><br/>
+        All such conclusions are nothing but conjectures. I for one, being a certified accident investigator would not like to speculate without having reliable information to conclude on 'How and why' of the accident.
+        <br/><br/>
+        So, I would like to wait and peruse the information recorded on the Flight Data Recorder and the cockpit voice recorder before reaching any conclusion, else it would only be speculation.
+        <br/><br/>
+        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+          <strong class="text-red-700">Important Note:</strong><br/>
+          <em>I would also like to humbly request all to exercise caution in expressing their views on accidents without any verifiable information, which could be highly disturbing to the families of the deceased passengers or the cockpit crews.</em>
+        </div>
+      `;
+      break;
     case "srinagar-hail-damage-may-2025":
       content = `
         Recently an Airbus A-321 aircraft suffered hail damage near Pathankot on a flight to Srinagar for having flown through a thunderstorm cloud (Cumulonimbus or CB). Let us see the facts of the case. The route was 'W30W' DELHI – SRINAGAR VIA, AMRITSAR- PATHANKOT – MESAR SRINAGAR. The route to be flown was in the proximity of the International border (IB) of Pakistan. An aircraft is not to fly within 15 nautical miles (about 28 kilometers) of the Pakistan border unless an Airway passes within the boundary of the said limitation. Due to the recent conflict with Pakistan, their airspace was closed for Indian aircraft and notices had been issued, hence no concessions could have been expected for a deviation to the left of track.
         <br/><br/>
         <div class="my-6">
-          <img src="/lovable-uploads/image.png" alt="Flight route map showing Delhi-Srinagar route via Amritsar-Pathankot-Mesar" class="w-full max-w-2xl mx-auto rounded-md shadow-sm"/>
+          <img src="/lovable-uploads/e27bf63c-2414-4ce3-b093-346d229d432e.png" alt="Flight route map showing Delhi-Srinagar route via Amritsar-Pathankot-Mesar" class="w-full max-w-2xl mx-auto rounded-lg shadow-md"/>
           <p class="text-sm text-gray-600 text-center mt-2 italic">Flight route map showing the Delhi-Srinagar route via Amritsar-Pathankot-Mesar</p>
         </div>
         <br/>
